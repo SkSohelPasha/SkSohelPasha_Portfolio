@@ -13,38 +13,31 @@ interface RouteStop {
 const journey: RouteStop[] = [
   {
     id: '01',
-    year: 'MAY - JUN 2026',
-    title: 'FULL STACK & MOBILE INTERN',
-    organization: 'TECHNICAL HUB PVT LTD',
-    description: 'Engineered cross-platform mobile and responsive web applications utilizing React Native and modern full-stack workflows.',
+    year: 'NOV 2025 - FEB 2026',
+    title: 'AI DATA ANNOTATION INTERN',
+    organization: 'SYNCHRO SERVE GLOBAL SOLUTIONS',
+    description: 'Reviewed and validated datasets, maintaining accuracy and quality standards under structured annotation guidelines and supporting AI model development.',
   },
   {
     id: '02',
-    year: '2026 MILESTONE',
-    title: 'TOP 100 NATIONAL TEAM',
-    organization: 'MYNTRA WEFORSHE HACKERRAMP',
-    description: 'Ranked among the Top 100 nationwide teams while maintaining Department Topper status (9.07 CGPA) in Data Science.',
+    year: 'MAY - JUN 2025',
+    title: 'GRAPHIC DESIGN INTERN',
+    organization: 'INAMIGOIS FOUNDATION',
+    description: 'Designed digital assets and user interfaces in Figma while collaborating with cross-functional teams and meeting project deadlines.',
   },
   {
     id: '03',
-    year: 'MAY - JUN 2025',
-    title: 'FULL STACK TRAINEE',
-    organization: 'TECHNICAL HUB PVT LTD',
-    description: 'Trained in modern full-stack architecture, developing and deploying end-to-end interactive responsive web platforms.',
+    year: '2022 - 2026',
+    title: 'B.TECH IN COMPUTER SCIENCE (AIML)',
+    organization: 'VIJAYA ENGINEERING COLLEGE',
+    description: 'Graduated in Computer Science & Engineering (AIML) with a CGPA of 8.32 / 10 in Khammam, Telangana.',
   },
   {
     id: '04',
-    year: '2023 - 2027',
-    title: 'B.TECH IN DATA SCIENCE',
-    organization: 'ADITYA COLLEGE OF ENGINEERING',
-    description: 'Specializing in Machine Learning and System Design. Solved 1200+ algorithm challenges across LeetCode, CodeChef, and GeeksforGeeks.',
-  },
-  {
-    id: '05',
-    year: '2021 - 2023',
-    title: 'HIGHER SECONDARY (MPC)',
-    organization: 'SRI CHAITANYA JUNIOR COLLEGE',
-    description: 'Completed specialized coursework in Mathematics, Physics, and Chemistry with 90.60% aggregate excellence.',
+    year: '2020 - 2022',
+    title: 'Intermediate',
+    organization: 'Resonance Jr.College',
+    description: 'Completed Intermediate with 92% in Khammam, Telangana.',
   },
 ];
 
@@ -111,12 +104,12 @@ export const ExperienceSection: React.FC = () => {
         <div className="relative w-full">
           
           {/* Background Track */}
-          <div className="absolute left-[19px] md:left-[140px] top-4 bottom-8 w-[1px] bg-[#8C6D4F]/20" />
+          <div className="absolute left-[19px] md:left-1/2 top-4 bottom-8 w-[1px] bg-[#8C6D4F]/20" />
           
           {/* Animated Gold Track */}
           <motion.div
             style={{ height: lineHeight }}
-            className="absolute left-[19px] md:left-[140px] top-4 w-[2px] bg-gradient-to-b from-[#D4AF37] via-[#C99E5D] to-[#8C6D4F]/10 shadow-[0_0_10px_#D4AF37] origin-top"
+            className="absolute left-[19px] md:left-1/2 top-4 w-[2px] bg-gradient-to-b from-[#D4AF37] via-[#C99E5D] to-[#8C6D4F]/10 shadow-[0_0_10px_#D4AF37] origin-top"
           />
 
           <div className="space-y-12">
@@ -129,30 +122,29 @@ export const ExperienceSection: React.FC = () => {
                 transition={{ duration: 0.7, delay: idx * 0.08 }}
                 className="relative flex flex-col md:flex-row items-start group"
               >
-                {/* Desktop Year (Left side of track) */}
-                <div className="hidden md:block w-[140px] shrink-0 pr-8 pt-0.5 text-right">
-                  <span className="text-[10px] font-mono tracking-[0.2em] text-[#8C6D4F] group-hover:text-[#D4AF37] transition-colors">
-                    {stop.year}
-                  </span>
-                </div>
-
                 {/* Route Node */}
-                <div className="absolute left-[19px] md:left-[140px] top-1.5 -translate-x-1/2 flex items-center justify-center">
+                <div className="absolute left-[19px] md:left-1/2 top-1.5 -translate-x-1/2 flex items-center justify-center">
                   <div className="absolute w-6 h-6 rounded-full border border-[#D4AF37]/0 group-hover:border-[#D4AF37]/40 group-hover:scale-150 transition-all duration-700 ease-out" />
                   <div className="w-2.5 h-2.5 rounded-full bg-[#120F0C] border border-[#8C6D4F] group-hover:bg-[#D4AF37] group-hover:border-[#D4AF37] group-hover:shadow-[0_0_12px_#D4AF37] transition-colors duration-300" />
                 </div>
 
-                {/* Content (Right side of track) */}
-                <div className="ml-14 md:ml-12 pl-2">
+                {/* Content alternates around the centered route line. */}
+                <div
+                  className={`ml-14 pl-2 md:ml-0 md:w-1/2 ${
+                    idx % 2 === 0
+                      ? 'md:ml-[50%] md:pl-10'
+                      : 'md:mr-[50%] md:pr-10 md:text-right'
+                  }`}
+                >
                   {/* Mobile Year */}
-                  <div className="md:hidden mb-1.5">
+                  <div className="mb-1.5">
                     <span className="text-[10px] font-mono tracking-[0.2em] text-[#D4AF37]">
                       {stop.year}
                     </span>
                   </div>
 
                   <h3
-                    className="text-3xl sm:text-4xl tracking-wide text-white group-hover:text-[#F7E7C4] transition-colors mb-1 leading-none"
+                      className="text-2xl sm:text-4xl tracking-wide text-white group-hover:text-[#F7E7C4] transition-colors mb-1 leading-none"
                     style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                   >
                     {stop.title}

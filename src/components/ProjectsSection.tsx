@@ -7,7 +7,8 @@ interface Project {
   title: string;
   category: string;
   description: string;
-  githubUrl: string;
+  githubUrl?: string;
+  liveUrl?: string;
   tech: string[];
   metrics: { label: string; value: string }[];
 }
@@ -15,99 +16,147 @@ interface Project {
 const projects: Project[] = [
   {
     number: '01',
-    title: 'PolicyGuard AI',
-    category: 'AI / LEGAL-TECH PLATFORM',
+    title: 'AI Developer Support Assistant',
+    category: 'RAG SAAS PLATFORM',
     description:
-      'AI-powered platform engineered for automated privacy policy analysis and legal contract auditing across web, desktop, and mobile. Implements NLP extraction, real-time risk alert detection, and generative risk score intelligence.',
-    githubUrl: 'https://github.com/lohithadamisetti123',
+      'A production-style RAG-based developer support platform that allows users to upload and query technical documentation using natural language. The system recursively chunks documents, generates semantic vector embeddings with the Gemini API, stores them in ChromaDB, and retrieves relevant context through LangChain before generating grounded AI responses. Built with FastAPI REST APIs, React.js, Supabase, authentication, and deployed using Vercel and Render.',
+    githubUrl: 'https://github.com/SkSohelPasha/Aura-Ai',
+    liveUrl: 'https://aura-ai-7gnh-git-main-sksohelpashas-projects.vercel.app/',
     tech: [
-      'React.js',
-      'React Native',
-      'Electron.js',
-      'Node.js',
-      'Express.js',
-      'MongoDB Atlas',
-      'OpenAI API',
-      'Prompt Eng',
-      'NLP',
-      'Docker',
-      'JWT',
-    ],
-    metrics: [
-      { label: 'PLATFORMS', value: 'Web, Mobile, Desktop' },
-      { label: 'ENGINE', value: 'OpenAI NLP / GPT' },
-      { label: 'PIPELINE', value: 'Automated Scoring' },
-    ],
-  },
-  {
-    number: '02',
-    title: 'Software Release Risk Heatmap',
-    category: 'MACHINE LEARNING / DEV PLATFORM',
-    description:
-      'Full-stack predictive release management platform utilizing Machine Learning. Implements a trained Random Forest classifier to categorize release stability from Low to Critical risk, rendered over a live interactive team heatmap.',
-    githubUrl: 'https://github.com/lohithadamisetti123',
-    tech: [
-      'React.js',
-      'TypeScript',
       'Python',
       'FastAPI',
-      'scikit-learn',
-      'PostgreSQL',
-      'Tailwind CSS',
+      'React.js',
+      'LangChain',
+      'RAG',
+      'ChromaDB',
+      'Supabase',
+      'Gemini API',
       'REST APIs',
-      'JWT',
     ],
     metrics: [
-      { label: 'MODEL', value: 'Random Forest' },
-      { label: 'ACCURACY', value: 'High Precision' },
-      { label: 'DASHBOARD', value: 'Live Risk Heatmap' },
+      { label: 'ENGINE', value: 'LangChain + Gemini' },
+      { label: 'RETRIEVAL', value: 'ChromaDB Vectors' },
+      { label: 'DEPLOYMENT', value: 'Vercel + Render' },
     ],
   },
+
+{
+    number: '02',
+    title: 'Customer Churn Prediction',
+    category: 'MACHINE LEARNING / DATA ANALYSIS',
+    description:
+      'A machine-learning and data-analysis project that processes customer datasets to identify patterns associated with customer churn and generate predictive insights. The workflow includes data ingestion, preprocessing, exploratory analysis, feature preparation, model development, and churn prediction using Python, Pandas, NumPy, and scikit-learn, with Matplotlib and Seaborn used for data visualization and analysis. The project demonstrates an end-to-end machine-learning pipeline focused on supporting customer-retention decisions.',
+    githubUrl: 'https://github.com/SkSohelPasha/Customer-Churn-Prediction-Using-ML-Model',
+    tech: [
+      'Machine Learning',
+      'Data Analysis',
+      'Data Ingestion',
+      'Prediction',
+      'Algorithms',
+      'Python',
+      'Pandas',
+      'NumPy',
+      'scikit-learn',
+      'Matplotlib',
+      'Seaborn',
+    ],
+    metrics: [
+      { label: 'WORKFLOW', value: 'Data to Prediction' },
+      { label: 'FOCUS', value: 'Customer Retention' },
+      { label: 'STACK', value: 'Python ML' },
+    ],
+  },
+
   {
     number: '03',
-    title: 'Multi-Tenant SaaS Platform',
-    category: 'CLOUD / DISTRIBUTED SYSTEM',
+    title: 'Student Portal',
+    category: 'PYTHON FULL STACK PROJECT',
     description:
-      'Enterprise-grade multi-tenant platform built for unified management of teams, projects, and execution lifecycles. Architected with strict tenant data isolation, granular Role-Based Access Control (RBAC), and containerized deployments.',
-    githubUrl: 'https://github.com/lohithadamisetti123',
+      'A Python-based full-stack student management application designed to centralize common student-facing workflows and information within a structured web platform. The application combines HTML, CSS, JavaScript, Python, Flask, and SQL to provide a complete frontend-to-backend workflow, demonstrating backend development, database integration, request handling, and full-stack application architecture.',
+    githubUrl: 'https://github.com/SkSohelPasha/student-portal',
     tech: [
-      'Node.js',
-      'Express.js',
-      'PostgreSQL',
-      'React',
-      'Docker',
-      'JWT',
-      'RBAC',
-      'REST APIs',
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'SQL',
+      'Python',
+      'Flask',
+      'Full Stack Development',
+      'Student Management',
+      'Web Application',
     ],
     metrics: [
-      { label: 'ARCHITECTURE', value: 'Multi-Tenant' },
-      { label: 'SECURITY', value: 'RBAC Isolation' },
-      { label: 'CONTAINERS', value: 'Docker Compose' },
+      { label: 'TYPE', value: 'Full Stack' },
+      { label: 'LANGUAGE', value: 'Python' },
+      { label: 'DOMAIN', value: 'Education' },
+    ],
+  },
+
+  {
+    number: '04',
+    title: 'Alex - Career Assistance AI Chatbot',
+    category: 'AI WORKFLOW AUTOMATION',
+    description:
+      'An AI-powered career assistance platform designed to support users throughout their job-search journey, including resume creation, ATS optimization, interview preparation, and career guidance. The chatbot uses automated AI workflows to understand user requests and provide contextual recommendations, resume-generation assistance, and actionable career support through a conversational interface. Built using Relevance AI with prompt engineering and workflow automation.',
+    githubUrl: 'https://github.com/SkSohelPasha/Career-Assistance-AI-Chatbot',
+    liveUrl: 'https://app.relevanceai.com/agents/f1db6c/c9fe8a35-1ec3-4ef5-ab5f-98ffa98366ab/14e8dd1c-dc6b-409d-bcf7-d994bad1ad3b/embed-chat?starting_message_prompts=Hello!+How+can+I+Assist+you+today?&hide_tool_steps=false&hide_file_uploads=false&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd/chat&input_placeholder_text=Check+Job+openings&hide_logo=false&hide_description=false&conversationId=new',
+    tech: [
+      'Relevance AI',
+      'AI Workflow Automation',
+      'Prompt Engineering',
+      'Resume Generation',
+      'ATS Optimization',
+    ],
+    metrics: [
+      { label: 'FOCUS', value: 'Career Guidance' },
+      { label: 'WORKFLOW', value: 'AI Automation' },
+      { label: 'OUTPUT', value: 'ATS-Ready Resumes' },
     ],
   },
   {
-    number: '04',
-    title: 'Payment Gateway with Hosted Checkout',
-    category: 'FINTECH / PAYMENT SYSTEMS',
+    number: '05',
+    title: 'WellHaven - Online Health Appointment System',
+    category: 'HEALTHCARE WEB PLATFORM',
     description:
-      'End-to-end hosted payment gateway infrastructure supporting seamless merchant order generation, multi-currency processing, and secure consumer checkout via UPI and Cards with webhook transaction verification.',
-    githubUrl: 'https://github.com/lohithadamisetti123',
+      'A full-stack healthcare appointment platform designed to streamline interactions between patients and administrators through a secure web application. The system provides role-based patient and admin workflows, JWT-based authentication, PostgreSQL-backed appointment management, responsive React and TypeScript interfaces, REST APIs, and an integrated AI knowledge-base chatbot for answering healthcare-related platform queries. The application is deployed as a production-ready web experience.',
+    githubUrl: 'https://github.com/SkSohelPasha/HealthCare-Services',
+    liveUrl: 'https://sksohelpasha.github.io/HealthCare-Services/',
     tech: [
-      'Node.js',
-      'Spring Boot',
       'PostgreSQL',
-      'React',
-      'Docker',
+      'React.js',
+      'TypeScript',
+      'JWT',
       'REST APIs',
-      'UPI / Card Integrations',
+      'AI Chatbot',
     ],
     metrics: [
-      { label: 'PROTOCOLS', value: 'UPI & Cards' },
-      { label: 'BACKEND', value: 'Spring Boot + Node' },
-      { label: 'DATABASE', value: 'ACID PostgreSQL' },
+      { label: 'ROLES', value: 'Patient + Admin' },
+      { label: 'SECURITY', value: 'JWT Authentication' },
+      { label: 'DATABASE', value: 'PostgreSQL' },
     ],
   },
+  {
+    number: '06',
+    title: 'AI Support Assistant',
+    category: 'AGENTX WORKFLOW AUTOMATION',
+    description:
+      'A conversational AI assistant designed to provide students with quick, natural-language support through an automated chatbot workflow. Built using AgentX and Google APIs, the assistant processes user questions and generates contextual responses through a focused conversational interface. The project demonstrates practical implementation of AI workflow automation for education and student-support use cases.',
+    liveUrl: 'https://app.agentx.so/shared-chat/688b07465ec85578f8b87708',
+    tech: [
+      'AgentX',
+      'Workflow Automation',
+      'Google API',
+      'Conversational AI',
+      'Student Support',
+    ],
+    metrics: [
+      { label: 'PLATFORM', value: 'AgentX' },
+      { label: 'INTERFACE', value: 'Conversational Chat' },
+      { label: 'FOCUS', value: 'Student Support' },
+    ],
+  },
+  
+  
 ];
 
 export const ProjectsSection: React.FC = () => {
@@ -171,16 +220,16 @@ export const ProjectsSection: React.FC = () => {
         {/* React Bits Stacking Deck */}
 <ScrollStack
   itemDistance={20}
-  itemScale={0.035}
-  itemStackDistance={28}
-  stackPosition="15%"
-  scaleEndPosition="6%"
-  baseScale={0.88}
+  itemScale={0.012}
+  itemStackDistance={40}
+  stackPosition="10%"
+  scaleEndPosition="4%"
+  baseScale={0.96}
   useWindowScroll={true}
 >
           {projects.map((project) => (
             <ScrollStackItem key={project.title}>
-              <div className="relative w-full rounded-2xl border border-[#8C6D4F]/50 bg-[#0E0C0A] p-8 sm:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#D4AF37]">
+              <div className="relative w-full rounded-2xl border border-[#8C6D4F]/50 bg-[#0E0C0A] p-5 sm:p-8 lg:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#D4AF37]">
                 
                 {/* Top Gold Border Light Flare */}
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/80 to-transparent" />
@@ -244,7 +293,7 @@ export const ProjectsSection: React.FC = () => {
                   </div>
 
                   {/* Right Column (5 Cols) */}
-                  <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6 lg:pl-6 lg:border-l lg:border-[#8C6D4F]/25">
+                  <div className="lg:col-span-5 flex flex-col justify-between space-y-6 lg:pl-6 lg:border-l lg:border-[#8C6D4F]/25">
                     <div className="space-y-3">
                       <span className="text-[9.5px] font-mono tracking-[0.25em] uppercase text-[#8C6D4F] block mb-2">
                         // ARCHITECTURE METRICS
@@ -264,16 +313,32 @@ export const ProjectsSection: React.FC = () => {
                       ))}
                     </div>
 
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center space-x-3 px-6 py-3.5 border border-[#8C6D4F] bg-[#16120E] hover:border-[#D4AF37] hover:bg-[#D4AF37] text-[#EAD8C7] hover:text-black text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.1)]"
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
-                    >
-                      <span>VIEW ON GITHUB</span>
-                      <span className="text-xs">↗</span>
-                    </a>
+                    <div className="flex flex-col sm:flex-row gap-3 border-t border-[#8C6D4F]/25 pt-6 lg:border-t-0 lg:pt-0">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex w-full sm:w-auto items-center justify-center space-x-3 px-5 sm:px-6 py-3.5 border border-[#D4AF37] bg-[#D4AF37] hover:border-[#F7E7C4] hover:bg-[#F7E7C4] text-black text-[10px] sm:text-[11px] font-medium tracking-[0.2em] uppercase transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.2)]"
+                          style={{ fontFamily: "'Montserrat', sans-serif" }}
+                        >
+                          <span>VIEW LIVE</span>
+                          <span className="text-xs">↗</span>
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex w-full sm:w-auto items-center justify-center space-x-3 px-5 sm:px-6 py-3.5 border border-[#8C6D4F] bg-[#16120E] hover:border-[#D4AF37] hover:bg-[#D4AF37] text-[#EAD8C7] hover:text-black text-[10px] sm:text-[11px] font-medium tracking-[0.2em] uppercase transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.1)]"
+                          style={{ fontFamily: "'Montserrat', sans-serif" }}
+                        >
+                          <span>VIEW ON GITHUB</span>
+                          <span className="text-xs">↗</span>
+                        </a>
+                      )}
+                    </div>
                   </div>
 
                 </div>

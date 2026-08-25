@@ -48,7 +48,7 @@ export const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-screen h-screen overflow-hidden bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black cursor-none">
+    <section className="relative w-full min-h-[100svh] overflow-hidden bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black cursor-none">
       {/* ================= 1. MINIMAL CUSTOM CURSOR ================= */}
       {cursorPos.x >= 0 && (
         <motion.div
@@ -64,14 +64,14 @@ export const HeroSection: React.FC = () => {
         />
       )}
 
-      {/* ================= 2. FIXED VIDEO LAYER ================= */}
-      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-black flex items-center justify-end">
+      {/* ================= 2. HERO-LOCAL VIDEO LAYER ================= */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-black">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="h-screen w-auto max-w-none object-contain origin-right scale-95 md:scale-[0.98] lg:scale-100"
+          className="absolute left-1/2 top-0 h-full w-auto max-w-none -translate-x-1/2 object-contain object-center"
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
@@ -107,7 +107,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* ================= 4. CONTENT LAYER ================= */}
-      <div className="relative z-10 flex flex-col justify-between h-full w-full px-6 sm:px-12 lg:px-16 pt-6 pb-8 pointer-events-none">
+      <div className="relative z-10 flex min-h-[100svh] flex-col justify-between h-full w-full px-5 py-5 sm:px-12 sm:py-6 lg:px-16 lg:py-8 pointer-events-none">
         
         {/* Navigation Bar */}
         <header className="relative flex items-center justify-between w-full pointer-events-auto">
@@ -118,12 +118,12 @@ export const HeroSection: React.FC = () => {
             className="text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase text-[#EAD8C7] hover:opacity-75 transition-opacity"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
-            LOHITHA.
+            Shaik Sohel Pasha.
           </a>
 
           {/* Navigation Links */}
           <nav
-            className="hidden md:flex items-center space-x-8 lg:space-x-10 text-[11px] tracking-[0.28em] font-light uppercase text-[#C4B5A5] absolute left-1/2 -translate-x-1/2"
+            className="hidden lg:flex items-center space-x-8 xl:space-x-10 text-[11px] tracking-[0.28em] font-light uppercase text-[#C4B5A5] absolute left-1/2 -translate-x-1/2"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             {navItems.map((item) => (
@@ -156,34 +156,34 @@ export const HeroSection: React.FC = () => {
         </header>
 
         {/* Main Hero Row */}
-        <div className="relative flex flex-col md:flex-row items-center justify-between w-full pt-4 pb-2 my-auto">
+        <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between w-full pt-10 pb-2 my-auto">
           
           {/* LEFT: Balanced Headline & Actions */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="max-w-sm sm:max-w-md md:max-w-lg lg:max-w-[37rem] xl:max-w-[40rem] pointer-events-auto z-20"
+            className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-[37rem] xl:max-w-[40rem] pointer-events-auto z-20"
           >
             {/* Massive Condensed Headline */}
             <motion.div variants={fadeUpVariants} className="relative mb-3.5 select-none">
               <h1
-                className="text-6xl sm:text-7xl md:text-8xl lg:text-[7.2rem] xl:text-[7.8rem] tracking-tight uppercase leading-[0.83]"
+                className="text-[3.6rem] sm:text-7xl md:text-8xl lg:text-[7.2rem] xl:text-[7.8rem] tracking-tight uppercase leading-[0.83]"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
-                {/* Line 1: I BUILD */}
+                {/* Line 1: BUILDING */}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
-                  I BUILD
+                  BUILDING
                 </span>
 
-                {/* Line 2: DIGITAL */}
+                {/* Line 2: AI-POWERED */}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
-                  DIGITAL
+                  AI-POWERED
                 </span>
 
-                {/* Line 3: EXPERIENCES */}
+                {/* Line 3: PRODUCTS */}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#DFBE8A] via-[#9B7640] to-[#342410] drop-shadow-[0_10px_30px_rgba(155,118,64,0.4)]">
-                  EXPERIENCES
+                  PRODUCTS.
                 </span>
               </h1>
             </motion.div>
@@ -194,7 +194,7 @@ export const HeroSection: React.FC = () => {
                 className="text-[10px] sm:text-[11px] md:text-xs font-normal tracking-[0.28em] uppercase text-[#C4B29E]"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                FULL STACK DEVELOPER <span className="text-[#8C6D4F] mx-1">•</span> UI/UX DESIGNER <span className="text-[#8C6D4F] mx-1">•</span> DATA SCIENCE
+                FULL STACK DEVELOPER <span className="text-[#8C6D4F] mx-1">•</span> BACKEND DEVELOPER <span className="text-[#8C6D4F] mx-1">•</span> GENERATIVE AI <span className="text-[#8C6D4F] mx-1">•</span> UI/UX DESIGNER
               </p>
             </motion.div>
 
@@ -205,16 +205,16 @@ export const HeroSection: React.FC = () => {
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               <p>
-                I turn bold ideas into seamless digital experiences.
+                I turn ambitious ideas into AI-powered products that people can use.
                 <br />
-                Where frontend meets powerful backend, and code transforms vision into impact.
+                Thoughtful interfaces, dependable backend systems, and intelligence built in from day one.
               </p>
             </motion.div>
 
             {/* CTA Buttons */}
             <motion.div
               variants={fadeUpVariants}
-              className="flex flex-row items-center gap-4 sm:gap-6"
+              className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-6"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               {/* Explore My Work CTA */}
@@ -223,7 +223,7 @@ export const HeroSection: React.FC = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
-                className="relative inline-flex items-center space-x-3 px-6 sm:px-7 py-3.5 border border-[#8C6D4F] bg-[#120F0C]/80 hover:border-[#D4AF37] text-[#EAD8C7] hover:text-[#FFF5EB] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.18)]"
+                className="relative inline-flex items-center justify-center space-x-3 px-5 sm:px-7 py-3.5 border border-[#8C6D4F] bg-[#120F0C]/80 hover:border-[#D4AF37] text-[#EAD8C7] hover:text-[#FFF5EB] text-[10px] sm:text-[11px] font-medium tracking-[0.2em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.18)]"
               >
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#E8D7C5]/40 to-transparent pointer-events-none" />
                 <span>EXPLORE MY WORK</span>
@@ -240,7 +240,7 @@ export const HeroSection: React.FC = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
-                className="relative inline-flex items-center space-x-2 px-6 sm:px-7 py-3.5 border border-[#8C6D4F]/40 hover:border-[#8C6D4F] text-[#BFA895] hover:text-[#EAD8C7] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300"
+                className="relative inline-flex items-center justify-center space-x-2 px-5 sm:px-7 py-3.5 border border-[#8C6D4F]/40 hover:border-[#8C6D4F] text-[#BFA895] hover:text-[#EAD8C7] text-[10px] sm:text-[11px] font-medium tracking-[0.2em] uppercase transition-all duration-300"
               >
                 <span>DOWNLOAD RESUME</span>
                 <span className="transform transition-transform duration-300 group-hover:translate-y-0.5 text-xs">
@@ -267,8 +267,8 @@ export const HeroSection: React.FC = () => {
               className="text-[9.5px] font-medium tracking-[0.24em] uppercase text-[#E0D3C5] space-y-1 mb-3"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              <p>CODE IS MY CRAFT.</p>
-              <p>IMPACT IS MY GOAL.</p>
+              <p>BUILDING WITH AI.</p>
+              <p>ENGINEERING IMPACT.</p>
             </div>
 
             {/* 3. Gold Accent Line */}
@@ -282,7 +282,7 @@ export const HeroSection: React.FC = () => {
                 letterSpacing: '0.04em',
               }}
             >
-              Lohitha
+              Sk.Sohel Pasha
             </div>
           </motion.div>
         </div>

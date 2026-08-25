@@ -4,36 +4,52 @@ import type { Variants } from 'framer-motion';
 
 const bentoCategories = [
   {
-    title: 'FRONTEND ARCHITECTURE',
+    title: 'FRONTEND DEVELOPMENT',
     badge: 'CORE PILLAR',
-    items: ['React.js', 'React Native', 'Tailwind CSS', 'Electron.js'],
-    description: 'Specialized in building high-performance client applications, custom component libraries, and immersive desktop/mobile interfaces.',
+    items: ['React.js', 'TypeScript', 'Tailwind CSS', 'Bootstrap', 'Responsive Design', 'API Integration'],
+    description: 'Building responsive, cross-browser web interfaces with React.js, TypeScript, Tailwind CSS, Bootstrap, HTML, and CSS3.',
     stat: '100% RESPONSIVE',
     colSpan: 'lg:col-span-7',
   },
   {
-    title: 'DISTRIBUTED BACKEND',
-    badge: 'HIGH CONCURRENCY',
-    items: ['Node.js', 'Express.js', 'Spring Boot', 'Docker', 'Redis'],
-    description: 'Engineered RESTful APIs, JWT role-based access control, caching layers, and multi-tenant SaaS backend isolation.',
-    stat: '< 40ms LATENCY',
+    title: 'BACKEND ENGINEERING',
+    badge: 'API & AUTH',
+    items: ['Python', 'FastAPI', 'Flask', 'REST APIs', 'JWT Authentication'],
+    description: 'Developing maintainable backend services, secure REST APIs, JWT authentication, and third-party API integrations.',
+    stat: 'API-DRIVEN',
     colSpan: 'lg:col-span-5',
   },
   {
-    title: 'DATA PLATFORMS',
+    title: 'DATABASE',
     badge: 'PERSISTENCE',
-    items: ['MongoDB Atlas', 'PostgreSQL', 'MySQL'],
-    description: 'Designing resilient relational and document schemas with optimized indexing and transaction isolation.',
-    stat: 'ACID & NOSQL',
+    items: ['MongoDB','SQL','Supabase','PostgreSQL'],
+    description: 'Working with relational and document databases alongside Git-driven deployment workflows on Vercel and Render.',
+    stat: 'SQL & NOSQL',
     colSpan: 'lg:col-span-5',
   },
   {
-    title: 'ALGORITHMS & MACHINE LEARNING',
-    badge: 'INTELLIGENCE',
-    items: ['C++', 'Python', 'Java', 'scikit-learn', 'OpenAI API'],
-    description: '1200+ algorithm problems solved. Applied Random Forest classifiers for real-time risk heatmaps and NLP policy analyzers.',
-    stat: '1200+ SOLVED',
+    title: 'AI & GENERATIVE AI',
+    badge: 'RAG SYSTEMS',
+    items: ['LLM Fundamentals', 'OpenAI APIs', 'LangChain', 'LangGraph', 'Gemini API', 'ChromaDB', 'FAISS', 'Prompt Engineering', 'Vector Embeddings', 'RAG Applications','Basic Agents'],
+    description: 'Creating RAG applications with vector embeddings, recursive text chunking, vector databases, LLMs, and the Google Gemini API.',
+    stat: 'RAG ENABLED',
     colSpan: 'lg:col-span-7',
+  },
+  {
+    title: 'DEVOPS & CLOUD',
+    badge: 'PERSISTENCE',
+    items: ['git', 'GitHub', 'Vercel', 'Render', 'AWS', 'CI/CD','Docker'],
+    description: 'Working with relational and document databases alongside Git-driven deployment workflows on Vercel and Render.',
+    stat: 'SQL & NOSQL',
+    colSpan: 'lg:col-span-7',
+  },
+  {
+    title: 'SOFT SKILLS & TEAMWORK',
+    badge: 'COLLABORATION',
+    items: ['Problem Solving', 'Communication', 'Leadership', 'Team Collaboration', 'Time Management'],
+    description: 'Demonstrating strong interpersonal skills, effective communication, and collaborative teamwork in professional and academic settings.',
+    stat: 'SOFT & HARD SKILLS',
+    colSpan: 'lg:col-span-5',
   },
 ];
 
@@ -67,7 +83,7 @@ export const SkillsSection: React.FC = () => {
   return (
     <section
       id="skills"
-      className="relative w-screen bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black pt-8 pb-24 px-6 sm:px-12 lg:px-20 overflow-hidden flex flex-col justify-center"
+      className="relative w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black pt-8 pb-24 px-6 sm:px-12 lg:px-20 overflow-hidden flex flex-col justify-center"
     >
       {/* Ambient Glows */}
       <div className="absolute top-1/3 left-1/4 w-[34rem] h-[34rem] bg-[#D4AF37]/5 rounded-full blur-[170px] pointer-events-none" />
@@ -128,7 +144,7 @@ export const SkillsSection: React.FC = () => {
               onMouseEnter={() => setHoveredIdx(idx)}
               onMouseLeave={() => setHoveredIdx(null)}
               whileHover={{ y: -5, transition: { duration: 0.25 } }}
-              className={`${block.colSpan} relative p-8 sm:p-9 rounded-sm border border-[#8C6D4F]/35 bg-[#100D0B]/85 backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-[#D4AF37]/80 hover:shadow-[0_16px_45px_rgba(212,175,55,0.14)] cursor-pointer group`}
+              className={`${block.colSpan} relative p-5 sm:p-8 lg:p-9 rounded-sm border border-[#8C6D4F]/35 bg-[#100D0B]/85 backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-[#D4AF37]/80 hover:shadow-[0_16px_45px_rgba(212,175,55,0.14)] cursor-pointer group`}
             >
               {/* Top Subtle Border Highlight */}
               <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
